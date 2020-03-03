@@ -25,6 +25,7 @@ const createAutoComplete = ({
     }
     dropdown.classList.add("is-active");
     resultWrapper.innerHTML = "";
+    // when user search for a new film the previos results will disappear
     for (const item of items) {
       const option = document.createElement("a");
       option.classList.add("dropdown-item");
@@ -33,6 +34,7 @@ const createAutoComplete = ({
         dropdown.classList.remove("is-active");
         input.value = inputValue(item);
         onOptionSelect(item);
+        // display the detail of the movie
       });
       resultWrapper.append(option);
     }
